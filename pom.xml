@@ -113,24 +113,32 @@
         </plugins>
     </build>
 
-    <!-- 發佈包倉庫配置 -->
+<!--    &lt;!&ndash; 發佈包倉庫配置 &ndash;&gt;-->
+<!--    <distributionManagement>-->
+<!--        <repository>-->
+<!--            <id>gitlab-maven</id>-->
+<!--            <url>${env.CI_API_V4_URL}/projects/${env.CI_PROJECT_ID}/packages/maven</url>-->
+<!--        </repository>-->
+<!--        <snapshotRepository>-->
+<!--            <id>gitlab-maven</id>-->
+<!--            <url>${env.CI_API_V4_URL}/projects/${env.CI_PROJECT_ID}/packages/maven</url>-->
+<!--        </snapshotRepository>-->
+<!--    </distributionManagement>-->
+
+<!--    &lt;!&ndash; 獲取包倉庫配置 &ndash;&gt;-->
+<!--    <repositories>-->
+<!--        <repository>-->
+<!--        <id>gitlab-maven</id>-->
+<!--        <url>${env.CI_API_V4_URL}/projects/${env.CI_PROJECT_ID}/packages/maven</url>-->
+<!--        </repository>-->
+<!--    </repositories>-->
+
     <distributionManagement>
         <repository>
-        <id>gitlab-maven</id>
-        <url>${env.CI_API_V4_URL}/projects/${env.CI_PROJECT_ID}/packages/maven</url>
+            <id>github</id>
+            <name>GitHub OWNER Apache Maven Packages</name>
+            <url>https://maven.pkg.github.com/a28115665/BaseMicroServer</url>
         </repository>
-        <snapshotRepository>
-        <id>gitlab-maven</id>
-        <url>${env.CI_API_V4_URL}/projects/${env.CI_PROJECT_ID}/packages/maven</url>
-        </snapshotRepository>
     </distributionManagement>
-
-    <!-- 獲取包倉庫配置 -->
-    <repositories>
-        <repository>
-        <id>gitlab-maven</id>
-        <url>${env.CI_API_V4_URL}/projects/${env.CI_PROJECT_ID}/packages/maven</url>
-        </repository>
-    </repositories>
 
 </project>
