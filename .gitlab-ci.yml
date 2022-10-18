@@ -1,0 +1,11 @@
+deploy:
+  tags:
+      - k8s-runner
+  image: ${HARBOR_REGISTRY}/tools/maven_with_baasid_root_ca:v1.0.0
+  script:
+    - 'mvn deploy -s ci_settings.xml --batch-mode'
+  only:
+    - master
+  artifacts:
+    paths:
+      - target/
